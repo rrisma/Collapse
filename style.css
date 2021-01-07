@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    height: 100%;
+    overflow: hidden;
+}
+.content-inner {
+    background-color: #f4f7fe;
+    width: 750px;
+    padding: 60px;
+    margin: 40px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.content-collapse {
+    width: 80%;
+    padding: 20px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    background-color: white;
+
+}
+input {
+    opacity: 0;
+    position: absolute;
+    z-index: 1;
+}
+.header {
+    color: gray;
+}
+.sub-text {
+    color: gray;
+}
+.content-collapse-items {
+    width: 100%;
+    color: gray;
+    border-bottom: 1px solid #a9a5a5;
+    overflow: hidden;
+}
+.label-collapse {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+}
+.label-collapse::after {
+    content: '\203A';
+    text-align: center;
+    transition: all .10s;
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+.label-content {
+    max-height: 0;
+    padding: 0 1em;
+    transition: all .10s;
+}
+input[type="checkbox"]:checked + .label-collapse::after {
+    content: '\203A';
+    text-align: center;
+    /* transition: all .10s; */
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+input[type="checkbox"]:checked + .label-collapse ~ .label-content {
+    max-height: 100%;
+    padding: 16px;
+    background-color: gray;
+    color: white;
+}
+
